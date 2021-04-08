@@ -1,0 +1,77 @@
+%%%%% Güncelleme Geçmişi
+%%%%% v2.0 -> 01.03.2017 (IOS)
+%%%%% v1.2 -> 20.12.2016 (IOS)
+%%%%% v1.1 -> 10.11.2016 (IOS)
+
+\documentclass[a4paper,12pt,oneside,openany]{book}
+\usepackage{amsmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%      PROJECT PARAMETERS      %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Project Option: "computer" or "senior"
+% Report Option: "report" or "final"
+
+% Example:   \usepackage[computer, report]{ytucestyle}
+%            \usepackage[senior, final]{ytucestyle}
+
+\usepackage[senior, final]{ytucestyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%         REFERENCES       %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{references.bib} 
+
+\begin{document}
+\onehalfspacing
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%         FRONT PAGES      %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input {frontPages/0a}
+% Eğer sembol yoksa aşağıdaki satırın başına yüzde işareti (%) ekleyiniz.
+% \input {frontPages/0b1-listofsymbols}
+% Eğer kısaltma yoksa aşağıdaki satırın başına yüzde işareti (%) ekleyiniz.
+\input {frontPages/0b2-listofabbrevations}
+\input {frontPages/0b3-lists}
+
+\onehalfspacing
+\clearpage
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%      CHAPTERS     %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input {projectChapters/1-chapter}
+\input {projectChapters/2-chapter}
+\input {projectChapters/3-chapter}
+\input {projectChapters/4-chapter}
+\input {projectChapters/5-chapter}
+\input {projectChapters/6-chapter}
+\input {projectChapters/7-chapter}
+\input {projectChapters/8-chapter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%      APPENDICES     %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\appendix
+
+%\input {projectChapters/A-appendix}
+%\input {projectChapters/B-appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%         BACK PAGES       %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\addcontentsline{toc}{chapter}{\bibName}
+\singlespacing
+\printbibliography[title={\bibName}]
+
+\ifnum\final=1
+\newpage
+\input {frontPages/cv}
+\fi
+
+\end{document}

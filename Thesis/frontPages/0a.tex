@@ -1,0 +1,88 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% BU SAYFA ÜZERİNDE OYNAMA YAPMAYINIZ %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{titlepage}
+    \begin{center}
+    
+        \large
+        
+        \textbf{\country\\ \university \\ \department}
+        \vspace*{0.5cm}
+        
+        \includegraphics[width=0.25\textwidth]{frontPages/ytu_logo.png}
+        
+        \vspace*{1.5cm}
+        \Large
+        \parbox[][0.8cm][c]{1.0\textwidth}{
+            \centering
+            \textbf{\titleOfThesis}
+        }
+        
+        \vspace{3cm}
+        
+        \numberi~$-$~\studenti\\ 
+        \ifnum\pdfstrcmp{\studentii}{~}=0
+        ~
+        \else
+        \numberii~$-$~\studentii
+        \fi 
+        \vspace{2cm}
+        
+        \large
+        \textbf{\thesisType}
+
+        
+        \vspace{2cm}
+        
+        \normalsize
+        {\advisorT\\\advisor}
+        
+        \vspace{1.5cm}
+        
+        \large
+        \date
+    \end{center}
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+\par\vspace*{\fill}
+\noindent
+
+\ifnum\lang=0
+\textbf{\footnotesize\centering\textcopyright~All rights reserved to Yıldız Technical University, Computer Engineering Department.}
+\else
+\textbf{\footnotesize\centering\textcopyright~Bu projenin bütün hakları Yıldız Teknik Üniversitesi Bilgisayar Mühendisliği Bölümü’ne aittir.}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% TEŞEKKÜR METNİ                      %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifnum\final=1
+\newpage
+\chapter*{\acknowledgements}
+
+\acknowledgementText
+
+\begin{flushright}
+\studenti\\
+\studentii
+\end{flushright}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% İÇİNDEKİLER                         %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\newpage
+\chapter*{\contents}
+\renewcommand\contentsname{\vspace{-3.6em}}
+\tableofcontents
